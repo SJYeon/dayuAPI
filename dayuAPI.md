@@ -102,6 +102,8 @@ manage/getorders.action
 请求参数说明:
 	字段		类型	可为空	备注
 	shopId		int		false	商铺id
+	dateType	String	yes		day:今日  month：本月  空或者all：全部
+	pageNum		inT		False	页数 比如每页12个 需要第2页的 则pangeNum为12*2=24
 
 返回参数：对象List(JF_Goods_ProductOrderListDTO)
 
@@ -253,6 +255,37 @@ manage/updateshopinfo.action
 {"originalPrice":4.5,"isAdd":false,"productImage":"./img/3.jpg","currentPrice":3.8,"productName":"泡面9","productId":9},
 {"originalPrice":4.5,"isAdd":false,"productImage":"./img/3.jpg","currentPrice":3.8,"productName":"泡面8","productId":8}],"info":"正常数据！"}
 
-十三、
+十三、我的钱包页面
+/manage/adminAccount.action
+
+参数对象：
+	字段		类型		可为空		备注
+	shopId		int			false		商铺id
+	
+返回对象：JF_AccountDTO
+
+返回成功数据
+
+{"flag":true,"data":{"moneyOfMonth":92,"moneyOfDay":0,"totalCash":470,"totalAmount":450},"info":"正常数据！"}
+十四、提现明细
+
+/manage/getAccountDetails.action
+
+参数对象：
+	字段		类型		可为空		备注
+	shopId		int			false		商铺id
+	pageNum		int			false		页面数 同上
+	
+返回对象：List（JF_AccountDetailsDTO）
+
+{"flag":true,"data":[{"createTime":"Wed Jan 27 12:13:19 CST 2016","serialId":9,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:18 CST 2016","serialId":8,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:17 CST 2016","serialId":7,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:16 CST 2016","serialId":6,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:15 CST 2016","serialId":5,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:14 CST 2016","serialId":4,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 00:00:00 CST 2016","serialId":3,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
+{"createTime":"Fri Jan 15 00:00:00 CST 2016","serialId":2,"totalCash":0,"totalAmount":0,"cashAmount":20,"amountState":1},
+{"createTime":"Thu Jan 14 00:00:00 CST 2016","serialId":1,"totalCash":0,"totalAmount":0,"cashAmount":100,"amountState":1}],"info":"正常数据！"}
 
 
