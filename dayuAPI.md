@@ -97,15 +97,76 @@
 {"flag":false, "type":9001,"info":"密码修改失败"}
 
 
-四、订单列表查询
-manage/getorders.action
+四、已下单订单列表查询
+/manage/getOrdersPlace.action
 请求参数说明:
+
+	字段		类型	可为空	备注
+	
+	shopId		int		false	商铺id
+
+	  
+	
+返回参数：对象List(JF_Goods_ProductOrderListDTO)
+
+
+	字段			类型		可为空	备注
+	orderNo			String		false	订单号
+	productName		String		False	商品名称
+	number			int			False	单种商品数量
+	allNumber		int			False	全部商品数量
+	productPrice	BigDecimal	False	商品价格
+	productImage	String		Yes		商品图片
+	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
+	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
+	RealPrice		BigDecimal	False	实际付款价格
+	
+测试数据：shopId=1
+返回成功数据：
+
+{"flag":true,"data":[{"orderState":1,"allNumber":11,"orderNo":"1153413513846680","orderType":0,"productImage":"/img/p.png","number":4,"RealPrice":11.5,"productPrice":4,"productName":"泡面9"},
+{"orderState":3,"allNumber":8,"orderNo":"1153413513846681","orderType":1,"productImage":"/img/p.png","number":4,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面3"},
+{"orderState":3,"allNumber":10,"orderNo":"1153413513846682","orderType":0,"productImage":"/img/p.png","number":2,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面6"},
+{"orderState":3,"allNumber":14,"orderNo":"1153413513846683","orderType":0,"productImage":"/img/p.png","number":5,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面2"}],"info":"正常数据！"} 
+
+四-1、全部已完成订单列表查询
+/manage/getOrdersOverAll.action
+请求参数说明:
+
 	字段		类型	可为空	备注
 	shopId		int		false	商铺id
-	dateType	String	yes		day:今日  month：本月  空或者all：全部
+	    
+	
+返回参数：对象List(JF_Goods_ProductOrderListDTO)
+
+
+	字段			类型		可为空	备注
+	orderNo			String		false	订单号
+	productName		String		False	商品名称
+	number			int			False	单种商品数量
+	allNumber		int			False	全部商品数量
+	productPrice	BigDecimal	False	商品价格
+	productImage	String		Yes		商品图片
+	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
+	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
+	RealPrice		BigDecimal	False	实际付款价格
+	
+测试数据：shopId=1
+返回成功数据：
+
+{"flag":true,"data":[{"orderState":2,"allNumber":5,"orderNo":"1153413513843443","orderType":2,"productImage":"/img/p.png","number":3,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面2"},
+{"orderState":2,"allNumber":11,"orderNo":"1153413513843466","orderType":1,"productImage":"/img/p.png","number":6,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面3"},
+{"orderState":2,"allNumber":8,"orderNo":"1153413513843455","orderType":0,"productImage":"/img/p.png","number":8,"RealPrice":11.5,"productPrice":4,"productName":"泡面4"},
+{"orderState":2,"allNumber":5,"orderNo":"1153413513846678","orderType":0,"productImage":"/img/p.png","number":3,"RealPrice":11.5,"productPrice":4,"productName":"泡面7"}],"info":"正常数据！"} 
+
+四-2、分页已完成订单列表查询
+/manage/getOrdersOver.action?
+请求参数说明:
+	字段		类型	可为空	备注
+	
+	shopId		int		false	商铺id
 	pageNum		inT		False	页数 比如每页12个 需要第2页的 则pangeNum为12*2=24
-	orderType	int		yes		为空时表示全部类型商品  0 五分钟购物  1 超市购物 2限时抢购
-	orderState	int		yes		为空时表示 未发货（3）和待收货（1）；   2、已完成；  不显示未付款     
+	
 	
 返回参数：对象List(JF_Goods_ProductOrderListDTO)
 
