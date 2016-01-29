@@ -104,7 +104,9 @@ manage/getorders.action
 	shopId		int		false	商铺id
 	dateType	String	yes		day:今日  month：本月  空或者all：全部
 	pageNum		inT		False	页数 比如每页12个 需要第2页的 则pangeNum为12*2=24
-
+	orderType	int		yes		为空时表示全部类型商品  0 五分钟购物  1 超市购物 2限时抢购
+	orderState	int		yes		为空时表示 未发货（3）和待收货（1）；   2、已完成；  不显示未付款     
+	
 返回参数：对象List(JF_Goods_ProductOrderListDTO)
 
 
