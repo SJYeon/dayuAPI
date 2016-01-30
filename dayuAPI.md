@@ -113,9 +113,7 @@
 	字段			类型		可为空	备注
 	orderNo			String		false	订单号
 	productName		String		False	商品名称
-	number			int			False	单种商品数量
 	allNumber		int			False	全部商品数量
-	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
@@ -144,9 +142,7 @@
 	字段			类型		可为空	备注
 	orderNo			String		false	订单号
 	productName		String		False	商品名称
-	number			int			False	单种商品数量
 	allNumber		int			False	全部商品数量
-	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
@@ -175,9 +171,7 @@
 	字段			类型		可为空	备注
 	orderNo			String		false	订单号
 	productName		String		False	商品名称
-	number			int			False	单种商品数量
 	allNumber		int			False	全部商品数量
-	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
@@ -205,9 +199,7 @@
 	字段			类型		可为空	备注
 	orderNo			String		false	订单号
 	productName		String		False	商品名称
-	number			int			False	单种商品数量
 	allNumber		int			False	全部商品数量
-	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
