@@ -120,6 +120,7 @@
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
 	RealPrice		BigDecimal	False	实际付款价格
+	OverTime		data		yes		已完成时间
 	
 测试数据：shopId=1
 返回成功数据：
@@ -150,6 +151,7 @@
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
 	RealPrice		BigDecimal	False	实际付款价格
+	OverTime		data		yes		已完成时间（刷新操作的时间节点）
 	
 测试数据：shopId=1
 返回成功数据：
@@ -181,6 +183,7 @@
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
 	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
 	RealPrice		BigDecimal	False	实际付款价格
+	OverTime		data		yes		已完成时间（刷新操作的时间节点）
 	
 测试数据：shopId=1
 返回成功数据：
