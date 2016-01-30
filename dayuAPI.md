@@ -118,11 +118,11 @@
 	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
-	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
+	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
 	RealPrice		BigDecimal	False	实际付款价格
 	OverTime		data		yes		已完成时间
 	
-测试数据：shopId=1
+
 返回成功数据：
 
 {"flag":true,"data":[{"orderState":1,"allNumber":11,"orderNo":"1153413513846680","orderType":0,"productImage":"/img/p.png","number":4,"RealPrice":11.5,"productPrice":4,"productName":"泡面9"},
@@ -149,11 +149,10 @@
 	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
-	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
+	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
 	RealPrice		BigDecimal	False	实际付款价格
 	OverTime		data		yes		已完成时间（刷新操作的时间节点）
-	
-测试数据：shopId=1
+
 返回成功数据：
 
 {"flag":true,"data":[{"orderState":2,"allNumber":5,"orderNo":"1153413513843443","orderType":2,"productImage":"/img/p.png","number":3,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面2"},
@@ -181,16 +180,49 @@
 	productPrice	BigDecimal	False	商品价格
 	productImage	String		Yes		商品图片
 	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
-	orderState		int			False	订单状态  0待支付 1 待收货 2已完成
+	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
 	RealPrice		BigDecimal	False	实际付款价格
 	OverTime		data		yes		已完成时间（刷新操作的时间节点）
-	
-测试数据：shopId=1
+
 返回成功数据：
 
 {"flag":true,"data":[{"orderState":2,"allNumber":5,"orderNo":"1153413513843443","orderType":0,"productImage":"./img/3.jpg","number":3,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面2"},
 {"orderState":2,"allNumber":11,"orderNo":"1153413513843466","orderType":0,"productImage":"./img/3.jpg","number":6,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面3"},
 {"orderState":2,"allNumber":8,"orderNo":"1153413513843455","orderType":0,"productImage":"./img/3.jpg","number":8,"RealPrice":11.5,"productPrice":4,"productName":"泡面4"}],"info":"正常数据！"}
+
+四-3、已完成订单的刷新操作
+/manage/refreshOrdersOver.action
+请求参数说明:
+	字段		类型	可为空	备注
+	
+	shopId		int		false	商铺id
+	timePoint	String	false	用SimpleDateFormat将日期类型转换为字符串  格式为Type类中的 PATTERN_DATETIME("yyyy-MM-dd HH:mm:ss") 格式
+	
+	
+返回参数：对象List(JF_Goods_ProductOrderListDTO)
+
+
+	字段			类型		可为空	备注
+	orderNo			String		false	订单号
+	productName		String		False	商品名称
+	number			int			False	单种商品数量
+	allNumber		int			False	全部商品数量
+	productPrice	BigDecimal	False	商品价格
+	productImage	String		Yes		商品图片
+	orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
+	orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
+	RealPrice		BigDecimal	False	实际付款价格
+	OverTime		data		yes		已完成时间（刷新操作的时间节点）
+	
+timePoint 为 2016-01-19 12:13:22 返回结果如下
+返回成功数据：
+
+{"flag":true,
+"data":[{"orderState":2,"allNumber":2,"orderNo":"1153413513846699","overTime":"Tue Jan 19 12:13:26 CST 2016","orderType":0,"productImage":"/img/p.png","number":2,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面5"},
+{"orderState":2,"allNumber":2,"orderNo":"1153413513846698","overTime":"Tue Jan 19 12:13:25 CST 2016","orderType":0,"productImage":"/img/p.png","number":2,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面7"},
+{"orderState":2,"allNumber":2,"orderNo":"1153413513846697","overTime":"Tue Jan 19 12:13:24 CST 2016","orderType":0,"productImage":"/img/p.png","number":2,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面5"},
+{"orderState":2,"allNumber":2,"orderNo":"1153413513846696","overTime":"Tue Jan 19 12:13:23 CST 2016","orderType":0,"productImage":"/img/p.png","number":2,"RealPrice":11.5,"productPrice":3.8,"productName":"泡面4"}],
+"info":"正常数据！"}
 
 五、订单详情
 /manage/getordersdetail.action
