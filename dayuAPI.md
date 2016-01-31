@@ -222,7 +222,6 @@ timePoint 为 2016-01-19 12:13:22 返回结果如下
 
 	字段		类型		可为空		备注
 	orderNo 	String		false		订单号
-	dateType	String		yes			订单日期类型  （day:今日  month:本月  all或者空:全部）
 
 返回参数：对象JF_Goods_ProductOrdersDTO
 
