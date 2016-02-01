@@ -225,6 +225,14 @@ timePoint 为 2016-01-19 12:13:22 返回结果如下
 
 返回参数：对象JF_Goods_ProductOrdersDTO
 
+	字段		类型 		可为空		备注	
+	orderNo		String 		false		订单号
+	realPrice	BigDecimal	false		实际付款价格
+	orderDate	Date		false		订单生成时间
+	payDate		data		false		付款时间
+	
+	
+	
 （返回数据有待测试）
 返回成功数据：
 
@@ -336,8 +344,10 @@ manage/updateshopinfo.action
 参数说明：
 	字段		类型		可为空		备注
 	adminId		int			false		商家id
-	pageNum		int			false		页面数（例如 每页12个商品 查询第2页 则pangeNum = 24）
+
 返回对象：List(JF_GoodsProductDTO)
+		
+		返回里边有个isAdd  这个表示时候已经添加了  如果是true  标明已添加  
 
 返回成功数据：
 {"flag":true,"data":[{"originalPrice":4.5,"isAdd":false,"productImage":"./img/3.jpg","currentPrice":3.8,"productName":"泡面10","productId":10},
