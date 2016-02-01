@@ -400,7 +400,26 @@ manage/updateshopinfo.action
 	
 返回成功数据：
 {"flag":true,"shopState":1}
+十六、收入明细
+/manage/getIncomeDetail.action
+参数说明：
+	字段		类型		可为空 		备注
+	shopId		inT			false		商铺id
+返回值：
+	字段			类型		可为空		备注
+	overTime		Date		false		时间
+	productImage	String		false		图片
+	RealPrice		BigDecimal 	false		收入
 
-	
+返回数据:
+{"flag":true,
+"data":[{"overTime":"Tue Jan 19 12:13:26 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Tue Jan 19 12:13:25 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
+{"overTime":"Tue Jan 19 12:13:24 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Tue Jan 19 12:13:23 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
+{"overTime":"Tue Jan 19 12:13:22 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Tue Jan 19 12:13:21 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
+{"overTime":"Tue Jan 19 12:13:20 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Tue Jan 19 12:13:19 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
+{"overTime":"Tue Jan 19 12:13:18 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Tue Jan 19 12:13:17 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
+{"overTime":"Sat Jan 16 12:13:15 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Fri Jan 15 12:13:16 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
+{"overTime":"Wed Feb 11 12:13:14 CST 2015","productImage":"/img/p.png","RealPrice":11.5}],"info":"正常数据！"}
+
 	
 	
