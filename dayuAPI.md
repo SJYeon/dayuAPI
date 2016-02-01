@@ -387,4 +387,20 @@ manage/updateshopinfo.action
 {"createTime":"Fri Jan 15 00:00:00 CST 2016","serialId":2,"totalCash":0,"totalAmount":0,"cashAmount":20,"amountState":1},
 {"createTime":"Thu Jan 14 00:00:00 CST 2016","serialId":1,"totalCash":0,"totalAmount":0,"cashAmount":100,"amountState":1}],"info":"正常数据！"}
 
+十五、系统设置页面
+/manage/systemSet.action
 
+参数说明：
+	字段 		类型 		可为空		备注
+	shopId		inT			false		商铺id
+	
+返回值：
+	字段			类型		可为空		备注
+	shopState		int			false		商铺的状态
+	
+返回成功数据：
+{"flag":true,"shopState":1}
+
+	
+	
+	
