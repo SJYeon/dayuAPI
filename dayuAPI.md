@@ -318,8 +318,9 @@ manage/updateshopinfo.action
 	字段		类型		可为空		备注
 
 	shopId	    int			false		店铺id
-	
-
+	totalNumber	int			false		商品总数
+	productList	String		false		商品信息列表
+	totalPrice	double		false		商品总价格
 返回成功数据：
 
 {"flag":true,"type":9000,"info":"店铺状态修改成功!"}
@@ -421,5 +422,39 @@ manage/updateshopinfo.action
 {"overTime":"Sat Jan 16 12:13:15 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Fri Jan 15 12:13:16 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
 {"overTime":"Wed Feb 11 12:13:14 CST 2015","productImage":"/img/p.png","RealPrice":11.5}],"info":"正常数据！"}
 
-	
-	
+客户端接口
+一、用户登录（常规登录）
+/users/login.action
+
+参数说明：
+		字段		类型		可为空		备注
+		userName	String		false		用户名
+		userPwd		String		false		密码
+
+返回参数：
+		字段		类型 		可为空		备注
+		userId		inT			false		用户Id
+		isState		int			false		用户状态（0 正常 99 禁用 -1 删除）
+
+返回数据：
+{"flag":true,"data":{"isState":0,"userId":10000},"info":"正常数据！"}
+
+二、个人中心信息
+
+/users/getUserCenter.action
+参数说明：
+		字段		类型		可为空		备注
+		userId		inT			false		用户Id
+返回参数：
+		字段		类型 		可为空		备注
+		userHead	String		false		用户头像图片路径
+		nickName	String		false		昵称
+		sex			int			false		默认为0，性别（0保密，1男；2女）
+		LevelName	String		false		用户等级
+		signDate	String		false		签到日期 
+		
+返回数据：
+{"flag":true,"data":{"sex":1,"signDate":"2015-02-11","nickName":"nickname","LevelName":"普通会员","userHead":"./img/s.jpg"},"info":"数据正常"}
+
+
+
