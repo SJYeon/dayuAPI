@@ -455,6 +455,26 @@ manage/updateshopinfo.action
 		
 返回数据：
 {"flag":true,"data":{"sex":1,"signDate":"2015-02-11","nickName":"nickname","LevelName":"普通会员","userHead":"./img/s.jpg"},"info":"数据正常"}
-
-
-
+三、用户订单查询（未分页情况，主要用于查询待付款和待收货）
+/users/getOrders.action
+参数说明：
+		字段		类型		可为空		备注
+		userId		inT			false		用户Id
+		orderState	int			yes			订单状态  0待支付 1 待收货 2已完成 3、待发货 （为空表示查询全部）
+返回参数：
+		字段			类型		可为空	备注
+		orderNo			String		false	订单号
+		productName		String		False	商品名称
+		allNumber		int			False	全部商品数量
+		productImage	String		Yes		商品图片
+		orderType		int			False	订单类型（0 五分钟购物  1 超市购物 2限时抢购）
+		orderState		int			False	订单状态  0待支付 1 待收货 2已完成 3、待发货
+		RealPrice		BigDecimal	False	实际付款价格
+		OverTime		data		yes		已完成时间（刷新操作的时间节点）
+返回值：（orderState为3时）
+{"flag":true,"data":[{"orderState":3,"allNumber"8,"orderNo":"1153413513846690","overTime":null,"orderType":2,"productImage":"/img/p.png","RealPrice":11.5,"productName":"泡面7"},
+{"orderState":3,"allNumber":2,"orderNo":"1153413513846686","overTime":null,"orderType":2,"productImage":"/img/p.png","RealPrice":11.5,"productName":"火腿3"},
+{"orderState":3,"allNumber":12,"orderNo":"1153413513846685","overTime":null,"orderType":2,"productImage":"/img/p.png","RealPrice":11.5,"productName":"面包1"},
+{"orderState":3,"allNumber":4,"orderNo":"1153413513846683","overTime":null,"orderType":0,"productImage":"/img/p.png","RealPrice":11.5,"productName":"泡面2"},
+{"orderState":3,"allNumber":5,"orderNo":"1153413513846682","overTime":null,"orderType":0,"productImage":"/img/p.png","RealPrice":11.5,"productName":"面包1"},
+{"orderState":3,"allNumber":6,"orderNo":"1153413513846681","overTime":null,"orderType":1,"productImage":"/img/p.png","RealPrice":11.5,"productName":"火腿1"}],"info":"数据正常"}
