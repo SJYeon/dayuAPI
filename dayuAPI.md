@@ -376,17 +376,18 @@ manage/updateshopinfo.action
 	shopId		int			false		商铺id
 	pageNum		int			false		页面数 同上
 	
-返回对象：List（JF_AccountDetailsDTO）
+返回对象：
 
-{"flag":true,"data":[{"createTime":"Wed Jan 27 12:13:19 CST 2016","serialId":9,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Wed Jan 27 12:13:18 CST 2016","serialId":8,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Wed Jan 27 12:13:17 CST 2016","serialId":7,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Wed Jan 27 12:13:16 CST 2016","serialId":6,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Wed Jan 27 12:13:15 CST 2016","serialId":5,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Wed Jan 27 12:13:14 CST 2016","serialId":4,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Wed Jan 27 00:00:00 CST 2016","serialId":3,"totalCash":0,"totalAmount":0,"cashAmount":50,"amountState":1},
-{"createTime":"Fri Jan 15 00:00:00 CST 2016","serialId":2,"totalCash":0,"totalAmount":0,"cashAmount":20,"amountState":1},
-{"createTime":"Thu Jan 14 00:00:00 CST 2016","serialId":1,"totalCash":0,"totalAmount":0,"cashAmount":100,"amountState":1}],"info":"正常数据！"}
+{"flag":true,
+"data":[{"createTime":"Wed Jan 27 12:13:19 CST 2016","SerialId":9,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:18 CST 2016","SerialId":8,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:17 CST 2016","SerialId":7,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:16 CST 2016","SerialId":6,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:15 CST 2016","SerialId":5,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 12:13:14 CST 2016","SerialId":4,"cashAmount":50,"amountState":1},
+{"createTime":"Wed Jan 27 00:00:00 CST 2016","SerialId":3,"cashAmount":50,"amountState":1},
+{"createTime":"Fri Jan 15 00:00:00 CST 2016","SerialId":2,"cashAmount":20,"amountState":1},
+{"createTime":"Thu Jan 14 00:00:00 CST 2016","SerialId":1,"cashAmount":100,"amountState":1}],"info":"正常数据！"}
 
 十五、系统设置页面
 /manage/systemSet.action
@@ -537,12 +538,13 @@ manage/updateshopinfo.action
 	"data":[{"floor":"西电92号楼 ","shopId":1,"shopState":1},
 			{"floor":"西电93号楼 ","shopId":2,"shopState":1}],
 	"info":"数据正常"}
-九、五分钟超市页面
+九、五分钟商品页面
 /users/getShopGoods.action
 参数：
 
 	字段		类型		可为空		备注
 	shopId	 	int			false		商铺id
+	
 返回参数：（其中list跟商家端的商品管理页面差不多，就是多了一个clicks -销量）
 
 返回值：
@@ -555,3 +557,35 @@ manage/updateshopinfo.action
 		{"categoryName":"面包","ProductQuality":5,"originalPrice":4.5,"clicks":12,"categoryId":3,"productImage":"/img/p.png","currentPrice":3.8,"productName":"面包4","productId":9,"relationId":9},
 		{"categoryName":"面包","ProductQuality":6,"originalPrice":4.5,"clicks":333,"categoryId":3,"productImage":"/img/p.png","currentPrice":3.8,"productName":"面包1","productId":5,"relationId":5}],
 "info":"正常数据！"}
+
+十、超市商品页面
+/users/getMarketGoods.action
+参数：
+
+	字段		类型		可为空		备注
+	shopId	 	int			false		商铺id
+	
+返回参数：（其中list跟商家端的商品添加页面一样，data是超市名称）
+
+返回成功数据：
+{"flag":true,
+"data":"大胖超市",
+"list":[{"categoryName":"泡面","originalPrice":4.5,"clicks":554,"categoryId":1,"productImage":"/img/p.png","currentPrice":3.8,"productName":"泡面9","productId":8},
+		{"categoryName":"泡面","originalPrice":4.5,"clicks":54,"categoryId":1,"productImage":"/img/p.png","currentPrice":3.8,"productName":"泡面7","productId":6},
+		{"categoryName":"泡面","originalPrice":4.5,"clicks":123,"categoryId":1,"productImage":"/img/p.png","currentPrice":3.8,"productName":"泡面5","productId":4},
+		{"categoryName":"泡面","originalPrice":4.5,"clicks":533,"categoryId":1,"productImage":"/img/p.png","currentPrice":3.8,"productName":"泡面2","productId":1},
+		{"categoryName":"火腿","originalPrice":4.5,"clicks":222,"categoryId":2,"productImage":"/img/p.png","currentPrice":3.8,"productName":"火腿3","productId":7},
+		{"categoryName":"火腿","originalPrice":4.5,"clicks":22,"categoryId":2,"productImage":"/img/p.png","currentPrice":3.8,"productName":"火腿1","productId":2},
+		{"categoryName":"面包","originalPrice":4.5,"clicks":12,"categoryId":3,"productImage":"/img/p.png","currentPrice":3.8,"productName":"面包4","productId":9},
+		{"categoryName":"面包","originalPrice":4.5,"clicks":333,"categoryId":3,"productImage":"/img/p.png","currentPrice":3.8,"productName":"面包1","productId":5}],
+"info":"正常数据！"}
+
+十一、我的邀请码
+/users/getMyInvCode.action
+参数：
+
+	字段		类型		可为空		备注
+	userId	 	int			false		用户id
+
+返回数据：info中为邀请码
+{"flag":true,"type":9000,"info":"142536"}
