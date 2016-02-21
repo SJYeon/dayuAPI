@@ -376,7 +376,7 @@ manage/updateshopinfo.action
 	shopId		int			false		商铺id
 	pageNum		int			false		页面数 同上
 	
-返回对象：
+返回对象：   (amountState：提现状态（0，申请中，1成功，2失败）)
 
 {"flag":true,
 "data":[{"createTime":"Wed Jan 27 12:13:19 CST 2016","SerialId":9,"cashAmount":50,"amountState":1},
