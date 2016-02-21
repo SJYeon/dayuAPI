@@ -478,3 +478,80 @@ manage/updateshopinfo.action
 {"orderState":3,"allNumber":4,"orderNo":"1153413513846683","overTime":null,"orderType":0,"productImage":"/img/p.png","RealPrice":11.5,"productName":"泡面2"},
 {"orderState":3,"allNumber":5,"orderNo":"1153413513846682","overTime":null,"orderType":0,"productImage":"/img/p.png","RealPrice":11.5,"productName":"面包1"},
 {"orderState":3,"allNumber":6,"orderNo":"1153413513846681","overTime":null,"orderType":1,"productImage":"/img/p.png","RealPrice":11.5,"productName":"火腿1"}],"info":"数据正常"}
+四、个人信息
+/users/getMyInfo.action
+参数说明：
+		字段		类型		可为空		备注
+		userId		inT			false		用户Id
+返回参数：
+		字段		类型 		可为空		备注
+		userHead	String		false		用户头像图片路径
+		nickName	String		false		昵称
+		sex			int			false		默认为0，性别（0保密，1男；2女）
+		phone		String		false		绑定的手机号
+返回数据：
+{"flag":true,"data":{"phone":"18292880890","sex":1,"nickName":"nickname","userHead":"./img/s.jpg"},"info":"数据正常"}
+五、修改密码
+/users/updatePwd.action
+参数说明：
+		字段		类型		可为空		备注
+		userId		inT			false		用户Id
+		userPwd		String		false		密码
+		
+返回成功数据：
+{"flag":true,"type":9000,"info":"修改成功"}
+
+六、修改订单状态
+/users/updateOrderState.action
+
+参数说明：
+		字段		类型		可为空		备注
+
+		orderNo		String		false		订单号
+		orderState	int			false		订单状态
+
+返回成功数据：
+
+{"flag":true,"type":9000,"info":"修改成功"}
+
+七、订单详情（跟商家端的一样）
+/users/getOrderDetails.action
+参数：
+
+	字段		类型		可为空		备注
+	orderNo 	String		false		订单号
+	
+八、定位 
+/users/getFloors.action
+参数：
+
+	字段		类型		可为空		备注
+	schoolName 	String		false		学校名称
+参数说明：
+		字段		类型		可为空		备注
+		floor		String		false		楼栋名称
+		shopId		int			false		楼栋对应的商铺id
+		shopState	int			false		商铺营业情况(1 营业  0 停业)
+返回成功数据：
+{"flag":true,
+	"data":[{"floor":"西电92号楼 ","shopId":1,"shopState":1},
+			{"floor":"西电93号楼 ","shopId":2,"shopState":1}],
+	"info":"数据正常"}
+九、五分钟超市页面
+/users/getShopGoods.action
+参数：
+
+	字段		类型		可为空		备注
+	shopId	 	int			false		商铺id
+返回参数：（其中list跟商家端的商品管理页面差不多，就是多了一个clicks -销量）
+
+返回值：
+{"flag":true,
+"data":{"name":"张思","shopSiteName":"大胖超市","shopLogo":"/img/p.png"},
+"list":[{"categoryName":"泡面","ProductQuality":14,"originalPrice":4.5,"clicks":554,"categoryId":1,"productImage":"/img/p.png","currentPrice":3.8,"productName":"泡面9","productId":8,"relationId":8},
+		{"categoryName":"泡面","ProductQuality":5,"originalPrice":4.5,"clicks":54,"categoryId":1,"productImage":"/img/p.png","currentPrice":3.8,"productName":"泡面7","productId":6,"relationId":6},
+		{"categoryName":"火腿","ProductQuality":222544,"originalPrice":4.5,"clicks":222,"categoryId":2,"productImage":"/img/p.png","currentPrice":3.8,"productName":"火腿3","productId":7,"relationId":7},
+		{"categoryName":"火腿","ProductQuality":1424,"originalPrice":4.5,"clicks":22,"categoryId":2,"productImage":"/img/p.png","currentPrice":3.8,"productName":"火腿1","productId":2,"relationId":2},
+		{"categoryName":"面包","ProductQuality":5,"originalPrice":4.5,"clicks":12,"categoryId":3,"productImage":"/img/p.png","currentPrice":3.8,"productName":"面包4","productId":9,"relationId":9},
+		{"categoryName":"面包","ProductQuality":6,"originalPrice":4.5,"clicks":333,"categoryId":3,"productImage":"/img/p.png","currentPrice":3.8,"productName":"面包1","productId":5,"relationId":5}],
+"info":"正常数据！"}
