@@ -402,6 +402,7 @@ manage/updateshopinfo.action
 	
 返回成功数据：
 {"flag":true,"shopState":1}
+
 十六、收入明细
 /manage/getIncomeDetail.action
 参数说明：
@@ -589,3 +590,37 @@ manage/updateshopinfo.action
 
 返回数据：info中为邀请码
 {"flag":true,"type":9000,"info":"142536"}
+十二、收货地址列表
+/users/getMyAllAddress.action
+参数说明：
+		字段		类型		可为空		备注
+		userId		inT			false		用户Id
+返回参数：
+		字段		类型		可为空		备注
+		linkName	String		false		收货人
+		phone		String		false		电话
+		address		String		false		地址
+		addressId	int			false		地址id
+
+十三、收货地址信息
+/users/getMyAllAddress.action
+参数说明：
+		字段			类型		可为空		备注
+		addressId		inT			false		收货地址信息Id
+		
+返回参数：
+		字段		类型		可为空		备注
+		linkName	String		false		收货人
+		phone		String		false		电话
+		address		String		false		地址
+		addressId	int			false		地址id
+		
+十四、添加收货地址
+参数：
+		字段		类型		可为空		备注
+		linkName	String		false		收货人
+		phone		String		false		电话
+		address		String		false		地址
+		userId		int			false		用户id
+返回信息：
+{"flag":true,"type":9000,"info":"添加成功"}
