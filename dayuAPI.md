@@ -624,3 +624,12 @@ manage/updateshopinfo.action
 		userId		int			false		用户id
 返回信息：
 {"flag":true,"type":9000,"info":"添加成功"}
+十五、意见反馈
+/users/addsg.action
+参数：
+
+	字段		类型		可为空		备注
+	userId	 	int			false		用户id
+	content		String		false		意见内容
+返回参数：
+{"flag":true,"type":9000,"info":"数据正常"}
