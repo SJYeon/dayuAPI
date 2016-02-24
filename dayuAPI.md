@@ -635,3 +635,19 @@ manage/updateshopinfo.action
 	content		String		false		意见内容
 返回参数：
 {"flag":true,"type":9000,"info":"数据正常"}
+十六、限时抢购
+/users/getRushProducts.action
+参数说明：
+		字段		类型		可为空		备注
+		shopId		inT			false		商铺id
+返回参数：
+		字段			类型		可为空		备注
+		rushPrice		BigDecimal	false		抢购价格
+		originalPrice	BigDecimal	false		市场价
+		rushQuality		int			false		抢购库存
+		productImage	String		false		商品图片
+		rushBeginTime	Date		false		抢购开始时间
+		rushEndTime		Date		false		结束时间
+		productName		String		false		商品名称
+		productId		int			false		商品id
+	
