@@ -407,7 +407,9 @@ manage/updateshopinfo.action
 /manage/getIncomeDetail.action
 参数说明：
 	字段		类型		可为空 		备注
-	shopId		inT			false		商铺id
+	shopId		int			false		商铺id
+	pageNum		int			false		页面数 同上
+	
 返回值：
 	字段			类型		可为空		备注
 	overTime		Date		false		时间
