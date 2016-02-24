@@ -415,7 +415,7 @@ manage/updateshopinfo.action
 	overTime		Date		false		时间
 	productImage	String		false		图片
 	RealPrice		BigDecimal 	false		收入
-
+	description		String		false		描述
 返回数据:
 {"flag":true,
 "data":[{"overTime":"Tue Jan 19 12:13:26 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Tue Jan 19 12:13:25 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
