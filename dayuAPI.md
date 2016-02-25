@@ -81,13 +81,11 @@
 "moneyOfToday":0,"shopLogo":"e:/temp_upload_file/1.jpg"},"info":"正常数据！"}
 
 三、商家修改密码（店铺修改密码）
-
-/users/updatePwd.action
+/manage/updatePwd.action
 
 请求参数说明:
 	字段		类型	可为空	备注
-	
-	userName	String	 false	用户帐号
+	adminId		int	 	false	商家id
 	userPwd		String	 false	密码
 
 返回成功数据:
