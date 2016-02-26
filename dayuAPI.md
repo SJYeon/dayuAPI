@@ -316,9 +316,7 @@ manage/updateshopinfo.action
 	字段		类型		可为空		备注
 
 	shopId	    int			false		店铺id
-	totalNumber	int			false		商品总数
-	productList	String		false		商品信息列表
-	totalPrice	double		false		商品总价格
+
 返回成功数据：
 
 {"flag":true,"type":9000,"info":"店铺状态修改成功!"}
