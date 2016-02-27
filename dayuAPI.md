@@ -319,7 +319,7 @@ manage/updateshopinfo.action
 
 返回成功数据：
 
-{"flag":true,"shopState":1}
+{"flag":true,"data":{"state":0},"info":"正常数据"}
 
 
 十一、商家商品管理页面
