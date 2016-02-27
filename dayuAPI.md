@@ -422,6 +422,17 @@ manage/updateshopinfo.action
 {"overTime":"Sat Jan 16 12:13:15 CST 2016","productImage":"/img/p.png","RealPrice":11.5},{"overTime":"Fri Jan 15 12:13:16 CST 2016","productImage":"/img/p.png","RealPrice":11.5},
 {"overTime":"Wed Feb 11 12:13:14 CST 2015","productImage":"/img/p.png","RealPrice":11.5}],"info":"正常数据！"}
 
+十七、提现接口
+/manage/getCash.action
+参数说明：
+	字段			类型		可为空 		备注
+	shopId			int			false		商铺id
+	cashAmount		double		false		余额	
+	cardPhone		String		false		手机号	
+	cartName		String		false		姓名
+	aliPayAccount	String		false		支付宝账号
+
+
 客户端接口
 一、用户登录（常规登录）
 /users/login.action
