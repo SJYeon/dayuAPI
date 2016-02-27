@@ -319,7 +319,7 @@ manage/updateshopinfo.action
 
 返回成功数据：
 
-{"flag":true,"type":9000,"info":"店铺状态修改成功!"}
+{"flag":true,"shopState":1}
 
 
 十一、商家商品管理页面
