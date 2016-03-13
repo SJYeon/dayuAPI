@@ -432,6 +432,13 @@ manage/updateshopinfo.action
 	cartName		String		false		姓名
 	aliPayAccount	String		false		支付宝账号
 
+十八、忘记密码
+/manage/newPwd.action
+参数说明：
+	字段				类型			可为空 		备注
+	userName			String			false		用户账号
+	userPwd				String			false		新密码	
+
 
 客户端接口
 一、用户登录（常规登录）
